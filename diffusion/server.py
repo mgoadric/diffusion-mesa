@@ -1,6 +1,6 @@
 from mesa.visualization.modules import CanvasGrid
 from mesa.visualization.ModularVisualization import ModularServer
-from mesa.visualization.UserParam import UserSettableParameter
+from mesa.visualization import Slider
 
 from .model import Diffusion
 import math
@@ -47,9 +47,9 @@ canvas_element = CanvasGrid(diffusion_portrayal, 50, 50, 500, 500)
 model_params = {
     "height": 50,
     "width": 50,
-    "evaporate": UserSettableParameter("slider", "Evaporation Rate", 0.07, 0.01, 0.30, 0.01),
-    "diffusion": UserSettableParameter("slider", "Diffusion Rate", 0.3, 0.0, 1.0, 0.1),
-    "initdrop": UserSettableParameter("slider", "Initial Drop", 500, 100, 1000, 50),
+    "evaporate": Slider("Evaporation Rate", 0.07, 0.01, 0.30, 0.01),
+    "diffusion": Slider("Diffusion Rate", 0.3, 0.0, 1.0, 0.1),
+    "initdrop": Slider("Initial Drop", 500, 100, 1000, 50),
 }
 
 server = ModularServer(

@@ -35,7 +35,7 @@ class Diffusion(Model):
 
         # Place a cell at each location, with some initialized to
         # have chemical.
-        for (contents, x, y) in self.grid.coord_iter():
+        for contents, (x, y) in self.grid.coord_iter():
             cell = Environment((x, y), self)
             if self.random.random() < 0.01:
                 cell.add(self.initdrop)
